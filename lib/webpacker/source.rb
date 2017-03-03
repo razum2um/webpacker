@@ -33,6 +33,10 @@ class Webpacker::Source
     end
 
     def filename
-      "#{name}.js"
+      if name =~ /\./
+        name
+      else
+        "#{name}.js"
+      end
     end
 end
